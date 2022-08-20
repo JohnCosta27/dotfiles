@@ -18,6 +18,11 @@ M.plugins = {
       },
     },
     ["williamboman/mason"] = override.mason,
+    ["nvim-treesitter/nvim-treesitter"] = {
+      autotag = {
+        enable = true,
+      }
+    }
   },
   options = {
     lspconfig = {

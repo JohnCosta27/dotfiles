@@ -7,5 +7,16 @@ return {
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
     end
+  },
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact", "typescriptreact"},
+    after = "nvim-treesitter",
+    config = function()
+      local present, autotag = pcall(require, "nvim-ts-autotag")
+
+      if present then
+        autotag.setup()
+      end
+    end
   }
 }
