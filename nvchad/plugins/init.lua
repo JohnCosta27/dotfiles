@@ -9,7 +9,7 @@ return {
     end
   },
   ["windwp/nvim-ts-autotag"] = {
-    ft = { "html", "javascriptreact", "typescriptreact"},
+    ft = { "html", "javascriptreact", "typescriptreact", "astro"},
     after = "nvim-treesitter",
     config = function()
       local present, autotag = pcall(require, "nvim-ts-autotag")

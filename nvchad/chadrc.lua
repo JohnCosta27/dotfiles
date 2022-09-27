@@ -45,5 +45,6 @@ M.ui = {
 
 M.mappings = require "custom.mappings"
 vim.cmd('autocmd BufRead,BufEnter *.astro set filetype=astro')
+vim.cmd('set rnu')
 
 return M
