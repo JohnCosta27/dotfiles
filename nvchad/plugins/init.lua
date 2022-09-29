@@ -18,5 +18,6 @@ return {
         autotag.setup()
       end
     end
-  }
+  },
+  ["lervag/vimtex"] = {},
 }
