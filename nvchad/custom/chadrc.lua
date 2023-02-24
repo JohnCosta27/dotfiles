@@ -22,7 +22,7 @@ M.plugins = {
       autotag = {
         enable = true,
       }
-    }
+    },
   },
   options = {
     lspconfig = {
@@ -47,5 +47,6 @@ M.mappings = require "custom.mappings"
 vim.cmd('autocmd BufRead,BufEnter *.astro set filetype=astro')
 vim.cmd('set rnu')
 vim.cmd('autocmd InsertLeave *.tex update')
+
 
 return M

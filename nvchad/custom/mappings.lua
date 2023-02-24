@@ -27,6 +27,12 @@ M.custom = {
   n = {
     ["<leader>nt"] = {"<cmd> tabnew <CR>", "New tab"},
     ["<leader>ct"] = {"<cmd> tabclose <CR>", "Close tab"},
+    ["<leader>rf"] = {":lua require('refactoring').select_refactor()<CR>", "options"},
+    ["<leader>q"] = {":lua require('harpoon.mark').add_file()<CR>"},
+    ["<leader>fm"] = {":lua require('harpoon.ui').toggle_quick_menu()<CR>"},
+  },
+  v = {
+    ["<leader>rf"] = {":lua require('refactoring').select_refactor()<CR>", "options"},
   }
 }
 
