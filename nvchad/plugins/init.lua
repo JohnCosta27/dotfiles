@@ -20,4 +20,5 @@ return {
     end
   },
   ["lervag/vimtex"] = {},
+  ["sindrets/diffview.nvim"] = {},
 }
