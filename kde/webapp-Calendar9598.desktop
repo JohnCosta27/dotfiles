@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Calendar
+Comment=Web App
+Exec=google-chrome-stable --app="https://calendar.google.com" --class=WebApp-Calendar9598 --user-data-dir=/home/johnc/.local/share/ice/profiles/Calendar9598
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=web-google-calendar
+Categories=GTK;WebApps;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Calendar9598
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://calendar.google.com
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
