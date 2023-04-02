@@ -38,7 +38,7 @@ M.options = {
    end
 }
 M.ui = {
-  theme = "everforest",
+  theme = "kanagawa",
   theme_toggle = {"everforest", "everforest_light"},
   lazyload = false,
 }

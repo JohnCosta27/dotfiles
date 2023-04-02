@@ -59,7 +59,7 @@ local options = {
     },
   },
 
-  extensions_list = { "themes", "terms", "harpoon" },
+  extensions_list = { "themes", "terms" },
 }
 
 -- check for any override

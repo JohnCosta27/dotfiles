@@ -23,4 +23,5 @@ return {
   ["sindrets/diffview.nvim"] = {},
   ["ThePrimeagen/refactoring.nvim"] = {},
   ["ThePrimeagen/harpoon"] = {},
+  ["christoomey/vim-tmux-navigator"] = {},
 }
