@@ -169,7 +169,7 @@ thefuck --alias | source
 set -gx PNPM_HOME "/home/johnc/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 
-set -gx TERM screen-256color
+set -gx TERM xterm-256color
 
 # pnpm end
 
