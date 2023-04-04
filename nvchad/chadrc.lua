@@ -1,14 +1,6 @@
 local M = {}
 
-M.plugins = {
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
-    end,
-  },
-}
+M.plugins = "custom.plugins"
 
 M.options = {
   user = function()

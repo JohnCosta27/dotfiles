@@ -22,6 +22,8 @@ M.diffview = {
   },
 }
 
+local lazyGitted = false
+
 M.custom = {
   n = {
     ["<Leader>fm"] = { ":lua vim.lsp.buf.format() <CR>", "Formats the current buffer using built in LSP" },
@@ -30,10 +32,35 @@ M.custom = {
     ["<leader>rf"] = { ":lua require('refactoring').select_refactor()<CR>", "options" },
     ["<leader>q"] = { ":lua require('harpoon.mark').add_file()<CR>" },
     ["<leader>fp"] = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>" },
-    ["<leader>lg"] = { ":LazyGit<CR>" },
+    ["<A-k>"] = {
+      function()
+        if lazyGitted then
+          require("nvterm.terminal").toggle "float"
+        else
+          lazyGitted = true
+          local term = require("nvterm.terminal").new "float"
+          -- Work around to get lazygit to work.
+          vim.api.nvim_chan_send(term.job_id, "lazygit\n")
+        end
+      end,
+      "Toggle floating terminal",
+    },
   },
   v = {
     ["<leader>rf"] = { ":lua require('refactoring').select_refactor()<CR>", "options" },
+  },
+  t = {
+    ["<A-k>"] = {
+      function()
+        if lazyGitted then
+          require("nvterm.terminal").toggle "float"
+        else
+          lazyGitted = true
+          require("nvterm.terminal").toggle "float"
+        end
+      end,
+      "Toggle floating terminal",
+    },
   },
 }
 
