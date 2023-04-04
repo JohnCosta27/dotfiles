@@ -36,6 +36,7 @@ M.custom = {
       function()
         if lazyGitted then
           require("nvterm.terminal").toggle "float"
+          vim.cmd "autocmd TermOpen * setlocal nonumber norelativenumber"
         else
           lazyGitted = true
           local term = require("nvterm.terminal").new "float"
