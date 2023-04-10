@@ -10,10 +10,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.tsserver.setup {
-  on_attach = function(client)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-}
-
