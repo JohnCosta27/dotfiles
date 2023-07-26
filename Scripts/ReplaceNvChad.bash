@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -r ~/.config/nvim/lua/*
-cp -r ../nvchad/* ~/.config/nvim/lua
+rm -r ~/.config/nvim/lua/custom/*
+cp -r ../nvchad/* ~/.config/nvim/lua/custom
