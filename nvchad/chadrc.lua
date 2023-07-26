@@ -11,11 +11,13 @@ M.options = {
 }
 
 M.ui = {
-  theme = "everforest",
-  theme_toggle = { "everforest", "everforest_light" },
+  theme = "everblush",
+  theme_toggle = { "everblush", "everblush" },
   lazyload = false,
 }
 M.mappings = require "custom.mappings"
+
+-- require("telescope").load_extension "git_worktree"
 
 vim.cmd "autocmd BufRead,BufEnter *.astro set filetype=astro"
 vim.cmd "set rnu"

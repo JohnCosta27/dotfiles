@@ -15,12 +15,44 @@ return {
       require "custom.lspconfig"
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
   { "windwp/nvim-ts-autotag", lazy = false },
   { "lervag/vimtex", lazy = false },
   { "sindrets/diffview.nvim", lazy = false },
   { "ThePrimeagen/harpoon" },
   { "christoomey/vim-tmux-navigator", lazy = false },
   { "jose-elias-alvarez/null-ls.nvim" },
+  { "sainnhe/everforest", lazy = false },
+  {
+    "JohnCosta27/git-worktree.nvim",
+    config = function()
+      local Worktree = require "git-worktree"
+
+      -- op = Operations.Switch, Operations.Create, Operations.Delete
+      -- metadata = table of useful values (structure dependent on op)
+      --      Switch
+      --          path = path you switched to
+      --          prev_path = previous worktree path
+      --      Create
+      --          path = path where worktree created
+      --          branch = branch name
+      --          upstream = upstream remote name
+      --      Delete
+      --          path = path where worktree deleted
+
+      Worktree.on_tree_change(function(op, metadata)
+        if op ~= Worktree.Operations.Delete then
+          -- os.execute()
+        end
+      end)
+    end,
+  },
   {
     "NvChad/nvterm",
     config = function()

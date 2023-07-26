@@ -32,6 +32,11 @@ M.custom = {
     ["<leader>rf"] = { ":lua require('refactoring').select_refactor()<CR>", "options" },
     ["<leader>q"] = { ":lua require('harpoon.mark').add_file()<CR>" },
     ["<leader>fp"] = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>" },
+
+    ["<leader>lt"] = { ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" },
+    ["<leader>wt"] = { ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" },
+    ["<leader>gr"] = { ":lua require('telescope.builtin').lsp_references()<CR>" },
+
     ["<A-k>"] = {
       function()
         if lazyGitted then
