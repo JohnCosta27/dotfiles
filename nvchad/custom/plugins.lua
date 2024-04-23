@@ -16,6 +16,10 @@ return {
     end,
   },
   {
+    "nvim-telescope/telescope.nvim",
+    lazy = false,
+  },
+  {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
     config = function()
@@ -29,6 +33,37 @@ return {
   { "christoomey/vim-tmux-navigator", lazy = false },
   { "jose-elias-alvarez/null-ls.nvim" },
   { "sainnhe/everforest", lazy = false },
+
+  { "https://github.com/mfussenegger/nvim-dap", dependencies = {"rcarriga/nvim-dap-ui", "leoluz/nvim-dap-go", "nvim-neotest/nvim-nio"}, config = function ()
+    local dap, dapui = require("dap"), require("dapui")
+
+    require('dap-go').setup()
+    require('dapui').setup()
+
+    dap.listeners.before.attach.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+      dapui.close()
+    end
+  end },
+
+   {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
   {
     "NvChad/nvterm",
     config = function()

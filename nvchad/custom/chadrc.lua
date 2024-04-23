@@ -17,8 +17,6 @@ M.ui = {
 }
 M.mappings = require "custom.mappings"
 
--- require("telescope").load_extension "git_worktree"
-
 vim.cmd "autocmd BufRead,BufEnter *.astro set filetype=astro"
 vim.cmd "set rnu"
 vim.cmd "autocmd InsertLeave *.tex update"
