@@ -2,7 +2,7 @@
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
@@ -14,6 +14,9 @@ alias lg='lazygit'
 alias p='pnpm'
 alias px='pnpx'
 alias s='tmux new-session -c $(bash ~/Code/dotfiles/Scripts/StartWork.bash && cat ~/.startwork.txt | fzf)'
+
+alias tasker='go run /home/john/Code/dotfiles/Scripts/CreateTask.go'
+alias mp4='bash ~/Code/dotfiles/Scripts/MkvToMp4.bash'
 
 ## Environment setup
 # Apply .profile
@@ -101,7 +104,7 @@ alias l.="exa -a | egrep '^\.'"                                     # show only 
 
 # Replace some more things with better alternatives
 # alias cat='bat --style header --style rules --style snip --style changes --style header'
-alias bat='bat --style header --style rules --style snip --style changes --style header'
+# alias bat='bat --style header --style rules --style snip --style changes --style header'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru --bottomup'
 
 # Common use
@@ -177,3 +180,17 @@ set -gx TERM xterm-256color
 
 # opam configuration
 source /home/johnc/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# Chrome
+set -gx BROWSER "vivaldi"
+set -gx SLEEP_TIME "8"
+
+set -gx UV_USE_IO_URING 0
