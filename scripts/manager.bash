@@ -1,8 +1,8 @@
 #!/bin/bash
+cd ~/Code/dotfiles
+git pull
 
 folders=("hypr" "ags" "tmux" "lazygit" "kitty" "fish")
-
-cd ..
 
 for folder in ${folders[@]}; do
   echo Moving $folder

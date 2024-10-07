@@ -1,0 +1,13 @@
+[Unit]
+Description=Dotfile manager service.
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Service]
+User=john
+WorkingDirectory=~
+ExecStart=Code/dotfiles/scripts/manager.bash
+
+[Install]
+WantedBy=multi-user.target
