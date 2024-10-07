@@ -2,7 +2,7 @@
 cd ~/Code/dotfiles
 git pull
 
-folders=("hypr" "ags" "tmux" "lazygit" "kitty" "fish")
+folders=("hypr" "ags" "tmux" "lazygit" "kitty" "fish" "nvim")
 
 for folder in ${folders[@]}; do
   echo Moving $folder
@@ -10,4 +10,4 @@ for folder in ${folders[@]}; do
 done
 
 # Starship
-mv starship.toml ~/.config/starship.toml
+cp starship.toml ~/.config/starship.toml
