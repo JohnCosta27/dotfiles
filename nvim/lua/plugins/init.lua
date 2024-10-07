@@ -1,4 +1,34 @@
 return {
+	{ "Everblush/nvim", name = "everblush" },
+	{ "hrsh7th/vim-vsnip" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{
+		"hrsh7th/nvim-cmp",
+		config = function()
+			local cmp = require("cmp")
+			cmp.setup({
+				snippet = {
+					expand = function(args)
+						vim.fn["vsnip#anonymous"](args.body)
+					end,
+				},
+				mapping = cmp.mapping.preset.insert({
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				}),
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "vsnip" },
+				}, {
+					{ name = "buffer" },
+				}),
+			})
+		end,
+	},
+
 	{
 		"nvimdev/guard.nvim",
 		-- Builtin configuration, optional
@@ -23,7 +53,7 @@ return {
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "lua", "javascript", "typescript", "html" },
+				ensure_installed = { "lua", "javascript", "typescript", "html", "tsx" },
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -42,6 +72,12 @@ return {
 				"s1n7ax/nvim-window-picker",
 				version = "2.*",
 				config = function()
+					require("neo-tree").setup({
+						update_focused_file = {
+							enable = true,
+						},
+					})
+
 					require("window-picker").setup({
 						filter_rules = {
 							include_current_win = false,
@@ -66,8 +102,13 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "hrsh7th/cmp-nvim-lsp" },
 		config = function()
-			require("lspconfig").lua_ls.setup({
+			local lsp = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			lsp.lua_ls.setup({
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = { globals = { "vim", "require" } },
@@ -77,6 +118,10 @@ return {
 						},
 					},
 				},
+			})
+
+			lsp.vtsls.setup({
+				capabilities = capabilities,
 			})
 		end,
 	},
