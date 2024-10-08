@@ -1,4 +1,9 @@
 return {
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
 	{ "Everblush/nvim", name = "everblush" },
 	{ "hrsh7th/vim-vsnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
@@ -53,7 +58,7 @@ return {
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "lua", "javascript", "typescript", "html", "tsx" },
+				ensure_installed = { "lua", "javascript", "typescript", "html", "tsx", "zig" },
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -121,6 +126,10 @@ return {
 			})
 
 			lsp.vtsls.setup({
+				capabilities = capabilities,
+			})
+
+			lsp.zls.setup({
 				capabilities = capabilities,
 			})
 		end,

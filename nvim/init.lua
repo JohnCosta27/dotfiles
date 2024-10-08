@@ -18,6 +18,13 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Remove sign column (LSP gutter on the left)
+vim.opt.signcolumn = "yes"
+
+-- Line Numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 -- Modules --
 
 -- Lazy = Package Manager --
@@ -60,6 +67,7 @@ vim.keymap.set("n", "<leader>x", "<Cmd>bd<CR>")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope live buffers" })
 
 -- Neo Tree --
 vim.keymap.set("n", "<C-n>", "<Cmd> Neotree toggle <CR>")
@@ -68,3 +76,7 @@ vim.keymap.set("n", "<leader>e", "<Cmd> Neotree focus <CR>")
 -- LSP --
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>lf", vim.diagnostic.open_float)
+
+-- Search --
+vim.keymap.set("n", "<ESC>", "<Cmd> noh <CR>")
