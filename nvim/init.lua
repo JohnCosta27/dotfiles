@@ -76,7 +76,15 @@ vim.keymap.set("n", "<leader>e", "<Cmd> Neotree focus <CR>")
 -- LSP --
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>ra", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>lf", vim.diagnostic.open_float)
 
 -- Search --
 vim.keymap.set("n", "<ESC>", "<Cmd> noh <CR>")
+
+-- Tmux navigator --
+vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
+vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
+vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
+vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
+vim.keymap.set("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")

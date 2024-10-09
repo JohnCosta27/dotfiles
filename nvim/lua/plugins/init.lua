@@ -1,5 +1,15 @@
 return {
 	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+	},
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
@@ -43,7 +53,7 @@ return {
 		config = function()
 			local ft = require("guard.filetype")
 			ft("lua"):fmt("lsp"):append("stylua")
-			ft("typescript,javascript,typescriptreact"):fmt("prettierd"):lint("eslint_d")
+			ft("typescript,javascript,typescriptreact"):fmt("prettierd")
 		end,
 	},
 	{
@@ -77,12 +87,6 @@ return {
 				"s1n7ax/nvim-window-picker",
 				version = "2.*",
 				config = function()
-					require("neo-tree").setup({
-						update_focused_file = {
-							enable = true,
-						},
-					})
-
 					require("window-picker").setup({
 						filter_rules = {
 							include_current_win = false,
@@ -101,8 +105,14 @@ return {
 		},
 		config = function()
 			require("neo-tree").setup({
-				close_if_last_window = false,
+				filesystem = {
+					follow_current_file = {
+						enabled = true,
+					},
+				},
+				close_if_last_window = true,
 			})
+			vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 		end,
 	},
 	{
