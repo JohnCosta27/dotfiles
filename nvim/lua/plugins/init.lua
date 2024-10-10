@@ -121,7 +121,7 @@ return {
 						enabled = true,
 					},
 				},
-				close_if_last_window = true,
+				close_if_last_window = false,
 			})
 			vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 		end,
