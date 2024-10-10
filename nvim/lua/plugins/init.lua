@@ -15,6 +15,17 @@ return {
 		config = true,
 	},
 	{ "Everblush/nvim", name = "everblush" },
+	{
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.gruvbox_material_enable_italic = true
+			vim.g.gruvbox_material_background = "medium"
+			vim.cmd.colorscheme("gruvbox-material")
+		end,
+	},
 	{ "hrsh7th/vim-vsnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{
