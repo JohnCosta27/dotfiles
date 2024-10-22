@@ -153,6 +153,10 @@ return {
 			lsp.zls.setup({
 				capabilities = capabilities,
 			})
+
+			lsp.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
