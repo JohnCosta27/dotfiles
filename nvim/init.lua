@@ -76,6 +76,7 @@ vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>ra", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>lf", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
 
 -- Search --
 vim.keymap.set("n", "<ESC>", "<Cmd> noh <CR>")
@@ -86,3 +87,7 @@ vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
 vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")
+
+-- Floating Terminal --
+vim.keymap.set("n", "<A-k>", "<cmd>ToggleTerm direction=float<cr>")
+vim.keymap.set("t", "<A-k>", "<cmd>ToggleTerm direction=float<cr>")
