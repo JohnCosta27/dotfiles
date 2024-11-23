@@ -158,6 +158,16 @@ return {
 			lsp.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+
+			lsp.gopls.setup({
+				capabilities = capabilities,
+			})
+			lsp.tailwindcss.setup({
+				capabilities = capabilities,
+			})
+			lsp.ocamllsp.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 	{
