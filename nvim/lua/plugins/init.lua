@@ -1,4 +1,20 @@
 return {
+	{
+		"nvimtools/none-ls.nvim",
+		config = function()
+			local null_ls = require("null-ls")
+
+			local formatting = null_ls.builtins.formatting
+
+			local sources = {
+				formatting.ocamlformat,
+			}
+
+			null_ls.setup({
+				sources = sources,
+			})
+		end,
+	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
 		"christoomey/vim-tmux-navigator",
@@ -157,6 +173,10 @@ return {
 
 			lsp.rust_analyzer.setup({
 				capabilities = capabilities,
+				diagnostic = {
+					-- Prevents the annoying popup for cancalled requests
+					refreshSupport = false,
+				},
 			})
 
 			lsp.gopls.setup({
