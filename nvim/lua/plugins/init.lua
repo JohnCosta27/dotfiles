@@ -1,4 +1,5 @@
 return {
+	{ "wakatime/vim-wakatime", lazy = false },
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
