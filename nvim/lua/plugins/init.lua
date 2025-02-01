@@ -1,20 +1,51 @@
 return {
 	{ "wakatime/vim-wakatime", lazy = false },
 	{
-		"nvimtools/none-ls.nvim",
+		"stevearc/conform.nvim",
 		config = function()
-			local null_ls = require("null-ls")
-
-			local formatting = null_ls.builtins.formatting
-
-			local sources = {
-				formatting.ocamlformat,
-			}
-
-			null_ls.setup({
-				sources = sources,
+			require("conform").setup({
+				formatters_by_ft = {
+					lua = { "stylua" },
+					rust = { "rustfmt", lsp_format = "fallback" },
+					javascript = { "prettierd", "prettier", stop_after_first = true },
+				},
+				format_on_save = {
+					lsp_format = "fallback",
+				},
 			})
 		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			--[[
+			require("lint").linters_by_ft = {
+				javascript = {
+					"eslint_d",
+				},
+				typescript = {
+					"eslint_d",
+				},
+				javascriptreact = {
+					"eslint_d",
+				},
+				typescriptreact = {
+					"eslint_d",
+				},
+			}
+            ]]
+			--
+		end,
+	},
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
@@ -72,23 +103,13 @@ return {
 			})
 		end,
 	},
-
-	{
-		"nvimdev/guard.nvim",
-		-- Builtin configuration, optional
-		dependencies = {
-			"nvimdev/guard-collection",
-		},
-		config = function()
-			local ft = require("guard.filetype")
-			ft("lua"):fmt("lsp"):append("stylua")
-			ft("typescript,javascript,typescriptreact"):fmt("prettierd")
-		end,
-	},
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("telescope").load_extension("fzf")
+		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -187,6 +208,9 @@ return {
 				capabilities = capabilities,
 			})
 			lsp.ocamllsp.setup({
+				capabilities = capabilities,
+			})
+			lsp.svelte.setup({
 				capabilities = capabilities,
 			})
 		end,
