@@ -4,8 +4,8 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-center": ["clock", "custom/music"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
          "disable-scroll": true,
      },
@@ -23,15 +23,10 @@
         "max-length": 50
     },
     "clock": {
-        "timezone": "Asia/Dubai",
+        "timezone": "Europe/London",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "{:%H:%M}"
     },
     "battery": {
         "states": {
