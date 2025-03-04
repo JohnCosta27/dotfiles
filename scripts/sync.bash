@@ -1,4 +1,4 @@
 for file in ".config"/*; do
-    echo $file
-    echo "rsync -av ~/$file .config/$file --delete"
+    echo "rsync -av ~/$file .config --delete"
+    rsync -av ~/$file .config --delete
 done
