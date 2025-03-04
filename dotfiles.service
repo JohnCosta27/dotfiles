@@ -5,9 +5,9 @@ After=systemd-user-sessions.service
 After=network-online.target
 
 [Service]
-User=john
+User=johnc
 WorkingDirectory=~
-ExecStart=Code/dotfiles/scripts/manager.bash
+ExecStart=bash Code/dotfiles/scripts/manager.bash
 
 [Install]
 WantedBy=multi-user.target

@@ -13,7 +13,12 @@ git pull
 #
 # sed -i "s/#$current_host: //" ./hypr/hyprland/monitors.conf
 
-rsync -av .config ~ --delete
+for file in ".config"/*; do
+    echo "rsync -av $file ~/.config --delete"
+    rsync -av $file ~/.config --delete
+done
+
+# metapac sync
 
 # Cleanup
 
