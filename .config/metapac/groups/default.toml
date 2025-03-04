@@ -66,6 +66,6 @@ arch = [
     "xorg-server",
     "xorg-xinit",
     "yay",
-    "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale",
+    "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale", "git-delta",
 ]
 
