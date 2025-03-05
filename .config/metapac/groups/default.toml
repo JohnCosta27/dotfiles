@@ -66,6 +66,6 @@ arch = [
     "xorg-server",
     "xorg-xinit",
     "yay",
-    "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale", "git-delta", "keepassxc", "slack-desktop-wayland", "pavucontrol", "telegram-desktop", "telegram-desktop", "telegram-desktop", "filelight", "filelight", "filelight", "filelight", "nodejs", "yarn", "wasm-pack",
+    "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale", "git-delta", "keepassxc", "slack-desktop-wayland", "pavucontrol", "telegram-desktop", "telegram-desktop", "telegram-desktop", "filelight", "filelight", "filelight", "filelight", "nodejs", "yarn", "wasm-pack", "rust",
 ]
 
