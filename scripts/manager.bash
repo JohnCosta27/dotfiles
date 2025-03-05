@@ -4,14 +4,16 @@ git pull
 
 # Replace the monitors part of hyprland config
 
-# current_host=""
-# if [[ $(hostname) == "johnc-desktop" ]]; then
-# 	current_host="DESKTOP"
-# else
-# 	current_host="LAPTOP"
-# fi
-#
-# sed -i "s/#$current_host: //" ./hypr/hyprland/monitors.conf
+current_host=""
+if [[ $(hostnamectl hostname) == "john-desktop" ]]; then
+	current_host="DESKTOP"
+else
+	current_host="LAPTOP"
+fi
+
+echo Current hostname: $current_host
+
+sed -i "s/#$current_host: //" .config/hypr/hyprland.conf
 
 for file in ".config"/*; do
     echo "rsync -av $file ~/.config --delete"
@@ -22,4 +24,4 @@ kitty metapac sync
 
 # Cleanup
 
-# sed -i "s/^monitor/#$current_host: monitor/" ./hypr/hyprland/monitors.conf
+sed -i "s/^monitor/#$current_host: monitor/" .config/hypr/hyprland.conf
