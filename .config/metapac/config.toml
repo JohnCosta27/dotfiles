@@ -11,6 +11,6 @@ hostname_groups_enabled = true
 # paths starting without a / are relative to the groups folder
 # Default: None
 [hostname_groups]
-john-desktop = ["default"]
-john-laptop = ["default"]
+john-desktop = ["default", "desktop"]
+john-laptop = ["default", "laptop"]
 server = []

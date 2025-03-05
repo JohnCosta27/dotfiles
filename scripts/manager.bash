@@ -20,7 +20,7 @@ for file in ".config"/*; do
     rsync -av $file ~/.config --delete
 done
 
-kitty metapac sync
+DISPLAY=:0 kitty metapac sync
 
 # Cleanup
 
