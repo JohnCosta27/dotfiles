@@ -145,7 +145,7 @@ arch = [
     "xorg-xinit",
     "yay",
     "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale", "git-delta", "keepassxc", "slack-desktop-wayland", "pavucontrol", "telegram-desktop", "filelight", "nodejs", "yarn", "rustup"
-, "vtsls"]
+, "vtsls", "bddsadsadsa", "git-lfs"]
 
 
 cargo = ["wasm-pack"]
