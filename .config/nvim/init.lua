@@ -70,13 +70,6 @@ end
 -- Save --
 vim.keymap.set("n", "<C-s>", "<Cmd>w<CR>")
 
--- Lint on save --
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
-})
-
 -- Split navigation --
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")

@@ -16,32 +16,7 @@ return {
 		end,
 	},
 	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			--[[
-			require("lint").linters_by_ft = {
-				javascript = {
-					"eslint_d",
-				},
-				typescript = {
-					"eslint_d",
-				},
-				javascriptreact = {
-					"eslint_d",
-				},
-				typescriptreact = {
-					"eslint_d",
-				},
-			}
-            ]]
-			--
-		end,
-	},
-	{
 		"numToStr/Comment.nvim",
-		opts = {
-			-- add any options here
-		},
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
@@ -59,7 +34,6 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
-	{ "Everblush/nvim", name = "everblush" },
 	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
@@ -101,7 +75,6 @@ return {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			-- require("telescope").load_extension("fzf")
@@ -207,6 +180,9 @@ return {
 				capabilities = capabilities,
 			})
 			lsp.svelte.setup({
+				capabilities = capabilities,
+			})
+			lsp.biome.setup({
 				capabilities = capabilities,
 			})
 		end,
