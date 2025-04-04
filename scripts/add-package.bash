@@ -6,8 +6,8 @@ if [ -z  $@ ]; then
     exit 1
 fi
 
-echo "metapac add --backend arch --package $@"
-metapac add --backend arch --package $@
+echo "metapac add --backend arch --packages $@"
+metapac add --backend arch --packages $@
 
 rsync -av ~/.config/metapac .config --delete
 
