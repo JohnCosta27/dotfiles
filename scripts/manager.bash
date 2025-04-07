@@ -13,9 +13,9 @@ fi
 
 echo Current hostname: $current_host
 
-sed -i "s/#$current_host: //" .config/hypr/hyprland.conf
+sed -i "s/#$current_host: //" config/hypr/hyprland.conf
 
-for file in ".config"/*; do
+for file in "config"/*; do
     echo "rsync -av $file ~/.config --delete"
     rsync -av $file ~/.config --delete
 done
@@ -24,4 +24,4 @@ DISPLAY=:0 kitty metapac sync
 
 # Cleanup
 
-sed -i "s/^monitor/#$current_host: monitor/" .config/hypr/hyprland.conf
+sed -i "s/^monitor/#$current_host: monitor/" config/hypr/hyprland.conf
