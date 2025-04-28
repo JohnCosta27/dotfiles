@@ -39,10 +39,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume}% {format_source}",
         "format-muted": "",
-        "format-source": " micrófono {volume}%",
-        "format-source-muted": " microphone-slash",
+        "format-source": "",
+        "format-source-muted": "Muted",
         "format-icons": {
             "default": ["", "", " "]
         },
