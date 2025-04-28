@@ -41,6 +41,8 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "",
+        "format-source": " micrófono {volume}%",
+        "format-source-muted": " microphone-slash",
         "format-icons": {
             "default": ["", "", " "]
         },
