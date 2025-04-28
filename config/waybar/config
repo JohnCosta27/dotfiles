@@ -39,12 +39,13 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
+        "format": "{icon} {format_source} {volume}%",
         "format-muted": "",
         "format-source": "",
-        "format-source-muted": "Muted",
+        "format-source-muted": "  ",
         "format-icons": {
-            "default": ["", "", " "]
+            "hdmi": ["", "", " "],
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
