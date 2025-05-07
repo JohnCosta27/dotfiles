@@ -1,5 +1,6 @@
 set fish_greeting
 
+set -gx ANDROID_SDK_ROO
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx NDK_HOME $ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)
 
