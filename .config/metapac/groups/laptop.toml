@@ -1,5 +1,0 @@
-arch = [
-    "amd-ucode",
-    "efibootmgr",
-    "syncthing"
-]
