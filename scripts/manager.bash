@@ -17,7 +17,7 @@ sed -i "s/#$current_host: //" config/hypr/hyprland.conf
 
 for file in "config"/*; do
     echo "rsync -av $file ~/.config --delete"
-    rsync -av $file ~/.config --delete
+    rsync -a $file ~/.config --delete
 done
 
 DISPLAY=:0 kitty metapac sync
