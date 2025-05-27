@@ -9,7 +9,7 @@ fi
 echo "metapac add --backend arch --packages $@"
 metapac add --backend arch --packages $@
 
-rsync -av ~/.config/metapac .config --delete
+rsync -av ~/.config/metapac config --delete
 
 metapac sync
 
