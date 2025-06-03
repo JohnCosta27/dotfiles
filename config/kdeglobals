@@ -1,0 +1,10 @@
+[Icons]
+Theme=Catppuccin-Mocha
+
+[KDE]
+SingleClick=true
+widgetStyle=qt6ct-style
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
