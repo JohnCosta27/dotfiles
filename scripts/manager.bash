@@ -20,6 +20,11 @@ for file in "config"/*; do
     rsync -a $file ~/.config --delete
 done
 
+for file in "local/share"/*; do
+    echo "rsync -av $file ~/.local/share --delete"
+    rsync -a $file ~/.local --delete
+done
+
 DISPLAY=:0 kitty metapac sync
 
 # Cleanup
