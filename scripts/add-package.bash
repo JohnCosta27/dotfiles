@@ -15,6 +15,6 @@ metapac sync
 
 echo "Adding package to git..."
 
-git add .config/metapac
+git add config/metapac
 git commit -m "add-package: $@"
 git push
