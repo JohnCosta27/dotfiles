@@ -145,7 +145,7 @@ arch = [
     "xorg-xinit",
     "yay",
     "zram-generator", "lazygit", "logseq-desktop-bin", "tailscale", "git-delta", "keepassxc", "slack-desktop-wayland", "pavucontrol", "telegram-desktop", "filelight", "nodejs", "yarn", "rustup"
-, "vtsls","git-lfs", "less", "ttf-fira-sans", "texlive-bin", "texstudio", "gopls", "postgresql", "hoppscotch-bin", "dbeaver", "obs-studio", "mullvad-vpn", "bun-bin", "hyprshot", "qt6-svg", "qt6-declarative", "qt5-quickcontrols2", "wl-clipboard-history", "cliphist", "stylua", "biome", "okular", "docker", "docker-compose", "bluez", "gwenview", "tailwindcss-language-server", "sddm-catppuccin-git", "qt6ct-kde", "hyprpaper"]
+, "vtsls","git-lfs", "less", "ttf-fira-sans", "texlive-bin", "texstudio", "gopls", "postgresql", "hoppscotch-bin", "dbeaver", "obs-studio", "mullvad-vpn", "bun-bin", "hyprshot", "qt6-svg", "qt6-declarative", "qt5-quickcontrols2", "wl-clipboard-history", "cliphist", "stylua", "biome", "okular", "docker", "docker-compose", "bluez", "gwenview", "tailwindcss-language-server", "sddm-catppuccin-git", "qt6ct-kde", "hyprpaper", "spotify"]
 
 
 cargo = ["wasm-pack"]
