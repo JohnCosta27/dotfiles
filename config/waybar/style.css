@@ -1,8 +1,8 @@
 @import "mocha.css";
 
 * {
-  font-family: FantasqueSansMono Nerd Font;
-  font-size: 17px;
+  font-family: "SpaceMono Nerd Font";
+  font-size: 20px;
   min-height: 0;
 }
 
@@ -56,6 +56,8 @@
 
 #battery {
   color: @green;
+  margin-right: 1rem;
+  border-radius: 0rem 1rem 1rem 0rem;
 }
 
 #battery.charging {
@@ -68,10 +70,7 @@
 
 #backlight {
   color: @yellow;
-}
-
-#backlight, #battery {
-    border-radius: 0;
+  border-radius: 1rem 0rem 0rem 1rem;
 }
 
 #pulseaudio {
@@ -92,6 +91,7 @@
 
 #custom-power {
     margin-right: 1rem;
+    padding-right: 1.5rem;
     border-radius: 0px 1rem 1rem 0px;
     color: @red;
 }

@@ -7,14 +7,14 @@
     "modules-center": ["clock", "custom/music"],
     "modules-right": ["pulseaudio", "backlight", "battery", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
-         "disable-scroll": true,
+          "disable-scroll": true
      },
     "tray": {
         "icon-size": 36,
-        "spacing": 10
+        "spacing": 16
     },
     "custom/music": {
-        "format": "  {}",
+        "format": "♫ {}",
         "escape": true,
         "interval": 5,
         "tooltip": false,
@@ -26,26 +26,30 @@
         "timezone": "Europe/London",
         "format": "{:%H:%M %d/%m/%Y}"
     },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝"]
+    },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "",
+        "format-charging": "⚡",
+        "format-plugged": "🔌",
         "format-alt": "{icon}",
-        "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {format_source} {volume}%",
-        "format-muted": "",
+        "format-muted": " mute",
         "format-source": "",
-        "format-source-muted": "  ",
+        "format-source-muted": " src mute ",
         "format-icons": {
-            "hdmi": ["", "", " "],
-            "default": ["", "", ""]
+            "hdmi": ["", "", ""],
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
@@ -57,6 +61,6 @@
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
-        "format": "襤"
+        "format": ""
     }
 }
