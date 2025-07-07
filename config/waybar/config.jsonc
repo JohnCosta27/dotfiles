@@ -35,11 +35,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
-        "format-charging": "⚡",
-        "format-plugged": "🔌",
-        "format-alt": "{icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "format-plugged": "🔌 {capacity}%",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 3
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
