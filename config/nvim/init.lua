@@ -109,3 +109,7 @@ vim.keymap.set("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 -- Floating Terminal --
 vim.keymap.set("n", "<A-k>", "<cmd>ToggleTerm direction=float<cr>")
 vim.keymap.set("t", "<A-k>", "<cmd>ToggleTerm direction=float<cr>")
+
+-- TODO: shift this over now that lsp-config is no longer needed
+-- doesnt work?
+-- vim.lsp.enable("ty")

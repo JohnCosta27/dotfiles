@@ -8,6 +8,7 @@ return {
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
 					javascript = { "prettierd", "prettier", stop_after_first = true },
+					python = { "ruff_format" },
 				},
 				format_on_save = {
 					lsp_format = "fallback",
@@ -43,34 +44,6 @@ return {
 			vim.g.gruvbox_material_enable_italic = true
 			vim.g.gruvbox_material_background = "hard"
 			vim.cmd.colorscheme("gruvbox-material")
-		end,
-	},
-	{ "hrsh7th/vim-vsnip" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{
-		"hrsh7th/nvim-cmp",
-		config = function()
-			local cmp = require("cmp")
-			cmp.setup({
-				snippet = {
-					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body)
-					end,
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "vsnip" },
-				}, {
-					{ name = "buffer" },
-				}),
-			})
 		end,
 	},
 	{
@@ -136,10 +109,8 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "hrsh7th/cmp-nvim-lsp" },
 		config = function()
 			local lsp = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lsp.lua_ls.setup({
 				capabilities = capabilities,
@@ -154,38 +125,78 @@ return {
 				},
 			})
 
-			lsp.vtsls.setup({
-				capabilities = capabilities,
-			})
+			lsp.vtsls.setup({})
 
-			lsp.zls.setup({
-				capabilities = capabilities,
-			})
+			lsp.zls.setup({})
 
 			lsp.rust_analyzer.setup({
-				capabilities = capabilities,
 				diagnostic = {
 					-- Prevents the annoying popup for cancalled requests
 					refreshSupport = false,
 				},
 			})
 
-			lsp.gopls.setup({
-				capabilities = capabilities,
-			})
-			lsp.tailwindcss.setup({
-				capabilities = capabilities,
-			})
-			lsp.ocamllsp.setup({
-				capabilities = capabilities,
-			})
-			lsp.svelte.setup({
-				capabilities = capabilities,
-			})
-			lsp.biome.setup({
-				capabilities = capabilities,
-			})
+			lsp.gopls.setup({})
+			lsp.tailwindcss.setup({})
+			lsp.ocamllsp.setup({})
+			lsp.svelte.setup({})
+			lsp.biome.setup({})
+			lsp.pylsp.setup({})
+			lsp.svelte.setup({})
 		end,
+	},
+	{
+		"saghen/blink.cmp",
+		-- optional: provides snippets for the snippet source
+		dependencies = { "rafamadriz/friendly-snippets" },
+
+		-- use a release tag to download pre-built binaries
+		version = "1.*",
+		-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+		-- build = 'cargo build --release',
+		-- If you use nix, you can build from source using latest nightly rust with:
+		-- build = 'nix run .#build-plugin',
+
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+			-- 'super-tab' for mappings similar to vscode (tab to accept)
+			-- 'enter' for enter to accept
+			-- 'none' for no mappings
+			--
+			-- All presets have the following mappings:
+			-- C-space: Open menu or open docs if already open
+			-- C-n/C-p or Up/Down: Select next/previous item
+			-- C-e: Hide menu
+			-- C-k: Toggle signature help (if signature.enabled = true)
+			--
+			-- See :h blink-cmp-config-keymap for defining your own keymap
+			keymap = { preset = "enter" },
+
+			appearance = {
+				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+				-- Adjusts spacing to ensure icons are aligned
+				nerd_font_variant = "mono",
+			},
+
+			-- (Default) Only show the documentation popup when manually triggered
+			completion = { documentation = { auto_show = false } },
+
+			-- Default list of enabled providers defined so that you can extend it
+			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			sources = {
+				default = { "lsp", "path", "snippets" },
+			},
+
+			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+			-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+			-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+			--
+			-- See the fuzzy documentation for more information
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
 	},
 	{
 		"sindrets/diffview.nvim",
