@@ -10,7 +10,7 @@
           "disable-scroll": true
      },
     "tray": {
-        "icon-size": 36,
+        "icon-size": 24,
         "spacing": 16
     },
     "custom/music": {
