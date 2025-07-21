@@ -50,7 +50,7 @@
         "format-source-muted": " src mute ",
         "format-icons": {
             "hdmi": ["", "", ""],
-            "default": ["", "", ""]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
