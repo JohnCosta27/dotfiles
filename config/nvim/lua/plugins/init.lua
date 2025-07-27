@@ -112,8 +112,13 @@ return {
 		config = function()
 			local lsp = require("lspconfig")
 
+			local clients = { "vtsls", "zls", "gopls", "tailwindcss", "ocamllsp", "svelte", "biome", "pylsp", "svelte" }
+
+			for _, value in pairs(clients) do
+				lsp[value].setup({})
+			end
+
 			lsp.lua_ls.setup({
-				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = { globals = { "vim", "require" } },
@@ -125,24 +130,12 @@ return {
 				},
 			})
 
-			lsp.vtsls.setup({})
-
-			lsp.zls.setup({})
-
 			lsp.rust_analyzer.setup({
 				diagnostic = {
 					-- Prevents the annoying popup for cancalled requests
 					refreshSupport = false,
 				},
 			})
-
-			lsp.gopls.setup({})
-			lsp.tailwindcss.setup({})
-			lsp.ocamllsp.setup({})
-			lsp.svelte.setup({})
-			lsp.biome.setup({})
-			lsp.pylsp.setup({})
-			lsp.svelte.setup({})
 		end,
 	},
 	{
@@ -166,8 +159,5 @@ return {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
-	},
-	{
-		"sindrets/diffview.nvim",
 	},
 }

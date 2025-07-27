@@ -1,18 +1,12 @@
 -- Leader
 vim.g.mapleader = " "
 
--- Guard (Linters + Formatters)
--- vim.g.guard_config = {
--- 	fmt_on_save = true,
--- 	lsp_as_default_formatter = true,
--- 	save_on_fmt = true,
--- }
-
 -- Sync system clipboard and neovim register
 vim.opt.clipboard = { "unnamedplus" }
 
 -- Save undo history
 vim.opt.undofile = true
+
 --
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
