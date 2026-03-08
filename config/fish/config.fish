@@ -8,4 +8,6 @@ alias add-pkg="bash ~/Code/dotfiles/scripts/add-package.bash"
 alias lg="lazygit"
 alias v="nvim"
 
+fish_vi_key_bindings
+
 starship init fish | source
