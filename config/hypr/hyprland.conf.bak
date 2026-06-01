@@ -23,7 +23,7 @@ source=~/.config/hypr/themes/mocha.conf
 ################
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-#DESKTOP: monitor=HDMI-A-1,2560x1440@144,1920x0,1,mirror,EDP-1
+monitor=HDMI-A-1,2560x1440@144,1920x0,1,mirror,EDP-1
 #LAPTOP: monitor=,preferred,auto,1
 
 
