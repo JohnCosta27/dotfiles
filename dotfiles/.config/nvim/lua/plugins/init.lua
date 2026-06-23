@@ -53,21 +53,12 @@ return {
 			-- require("telescope").load_extension("fzf")
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			local configs = require("nvim-treesitter.configs")
 
-			configs.setup({
-				modules = {},
-				ignore_install = {},
-				auto_install = true,
-				ensure_installed = { "lua", "javascript", "typescript", "html", "tsx", "zig" },
-				sync_install = false,
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
+	{
+		"romus204/tree-sitter-manager.nvim",
+		dependencies = {}, -- tree-sitter CLI must be installed system-wide
+		config = function()
+			require("tree-sitter-manager").setup()
 		end,
 	},
 
